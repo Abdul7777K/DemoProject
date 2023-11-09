@@ -46,11 +46,15 @@ jobs:
           echo 'export PATH="$PATH:/path/to/demo/dcover"' >> "$GITHUB_PATH"
       - name: check working dir
         run: pwd
-      - name: Activate Diffblue Cover
+      - name: change dir to dCover
         run: |
           cd D:\a\DemoProject\DemoProject\demo\dcover
           pwd
-          
+      - name: Activate Diffblue Cover
+        run: |
+          pwd
+          dcover activate "${{ secrets.DIFFBLUE_COVER_LICENSE_KEY }}"
+      
           
       
       
