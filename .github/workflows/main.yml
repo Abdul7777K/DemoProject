@@ -17,6 +17,7 @@ jobs:
     runs-on: windows-latest
     env:
       JVM_ARGS: -Xmx4096m
+      PATH: C:\Abdul
       
     steps:
       - name: Checkout repository
