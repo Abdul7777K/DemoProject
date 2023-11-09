@@ -50,7 +50,7 @@ jobs:
         run: |
           cd D:\a\DemoProject\DemoProject\demo\dcover
           pwd
-          dcover activate "${{ secrets.DIFFBLUE_COVER_LICENSE_KEY }}"
+          
           
       
       
