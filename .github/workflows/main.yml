@@ -10,7 +10,7 @@ jobs:
       JVM_ARGS: -Xmx4096m
     steps:
     - name: set env name
-      uses: myci-actions/append-to-path-windows@v1
+      uses: myci-actions/append-to-path-windows@2
       with:
         path: C:\Abdul
         env-var: PATH
