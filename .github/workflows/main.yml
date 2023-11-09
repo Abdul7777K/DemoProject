@@ -7,9 +7,13 @@ jobs:
   your_job_name:
     runs-on: windows-latest
     env:
-      PATH: C:\Abdul
       JVM_ARGS: -Xmx4096m
     steps:
+    - name: set env name
+      uses: myci-actions/append-to-path-windows@<version>
+      with:
+        path: C:\Abdul
+        env-var: PATH
     - name: Check Path
       run: echo $env:PATH
     - name: Add Git to PATH
