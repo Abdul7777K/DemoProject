@@ -53,21 +53,11 @@ jobs:
       - name: Add Diffblue Cover directory to GITHUB_PATH
         run: |
            echo 'D:\a\DemoProject\DemoProject\demo\dcover' >> $GITHUB_PATH
+           
+      - name: Activate
+        run: |
+           dir
+           dcover.exe activate "${{ secrets.DIFFBLUE_COVER_LICENSE_KEY }}"
 
-      - name: Set custom PATH
-        run: |
-          echo "##[add-path]D:\a\DemoProject\DemoProject\demo\dcover\"
-        shell: powershell
-  
-      - name: Verify PATH
-        run: echo $env:PATH
-        shell: powershell
-      - name: check working dir
-        run: dir D:\a\DemoProject\DemoProject\demo\dcover
-        
-      - name: Activate Diffblue Cover
-        run: |
-          pwd
-          dcover activate "${{ secrets.DIFFBLUE_COVER_LICENSE_KEY }}"
-        working-directory: D:\a\DemoProject\DemoProject\demo\dcover
+      
       
