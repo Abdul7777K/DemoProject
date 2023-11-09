@@ -17,7 +17,7 @@ jobs:
     runs-on: windows-latest
     env:
       JVM_ARGS: -Xmx4096m
-
+      PATH: D:\a\DemoProject\DemoProject\demo\dcover
     steps:
 
       - name: Checkout repository
@@ -54,10 +54,6 @@ jobs:
         run: |
            echo 'D:\a\DemoProject\DemoProject\demo\dcover' >> $GITHUB_PATH
            
-      - name: Add a Directory to PATH
-        uses: actions/setup-python@v2
-        with:
-          add-path: D:\a\DemoProject\DemoProject\demo\dcover
            
       - name: Activate -
         run: |
