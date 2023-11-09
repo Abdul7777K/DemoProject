@@ -60,7 +60,7 @@ jobs:
           [Environment]::SetEnvironmentVariable('Path', ($userPath + ';' + $newDir), 'User')
           $env:Path += ';' + $newDir
            
-      - name: Activate
+      - name: Activate -
         run: |
            $env:Path
            dcover activate "${{ secrets.DIFFBLUE_COVER_LICENSE_KEY }}"
