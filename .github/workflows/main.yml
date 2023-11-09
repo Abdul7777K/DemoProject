@@ -69,6 +69,6 @@ jobs:
       - name: Activate Diffblue Cover
         run: |
           pwd
-          "D:\a\DemoProject\DemoProject\demo\dcover\dcover.exe" activate "${{ secrets.DIFFBLUE_COVER_LICENSE_KEY }}"
+          dcover.exe activate "${{ secrets.DIFFBLUE_COVER_LICENSE_KEY }}"
         working-directory: D:\a\DemoProject\DemoProject\demo\dcover
       
