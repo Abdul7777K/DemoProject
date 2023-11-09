@@ -1,21 +1,27 @@
 name: Cover
 on:
+  # Allow the workflow to be triggered manually using the GitHub API, CLI, or browser interface
   workflow_dispatch:
+  # Trigger the workflow automatically on pushes to main
   push:
-    branches: [main]
+    branches: [ main ]
+concurrency:
+  # Only allow one run of the workflow per branch to run at a time
+  group: ${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  your_job_name:
+  Test:
     runs-on: windows-latest
     env:
       JVM_ARGS: -Xmx4096m
     steps:
-    - name: set env name
+    - name: Set Environment Path Variable for Dcover directory
       uses: myci-actions/append-to-path-windows@2
       with:
         path: D:\a\DemoProject\DemoProject\demo\dcover
         env-var: PATH
-    - name: Check Path
-      run: echo $env:PATH
+    #- name: Check Path
+     # run: echo $env:PATH
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
@@ -25,16 +31,16 @@ jobs:
       run: gradle init
 
     - name: Compile project
-      run: gradle build --scan
+      run: gradle build 
 
     # Get, unzip, and activate Diffblue Cover
-    - name: Download Diffblue Cover
+    - name: Create demo/decover dir and Download Diffblue Cover into this dir
       run: |
         mkdir demo/dcover
     - name: Redownload Diffblue Cover CLI zip files
       run: |
         curl --silent --show-error --location --output "diffblue-cover-cli.zip" "https://release.diffblue.com/2023.10.01/88bd072f1e783483a53e1fa7e53511d57b64a3b64e6f618c624f5a990409262f/diffblue-cover-cli-2023.10.01.zip"
-    - name: Print the list of dir
+    - name: list files and check present Working dir
       run: |
         ls
         pwd
@@ -42,9 +48,13 @@ jobs:
       run: |
         unzip diffblue-cover-cli.zip -d demo/dcover
         ls demo/dcover
-       
-    - name: Activate
+    - name: Activate Diffblue Cover
       run: |
-         $env:Path
+         #$env:Path
          dcover activate "${{ secrets.DIFFBLUE_COVER_LICENSE_KEY }}"
+      working-directory: D:\a\DemoProject\DemoProject\demo\dcover
+    # Generate tests with Diffblue Cover
+    - name: Generate tests
+      run: |
+        dcover create org.example.Addition --batch --working-directory --output test-cases.java
       working-directory: D:\a\DemoProject\DemoProject\demo\dcover
