@@ -43,7 +43,7 @@ jobs:
           ls demo/dcover
       - name: Add Diffblue Cover directory to GITHUB_PATH
         run: |
-          echo 'export PATH="$PATH:/path/to/demo/dcover"' >> "$GITHUB_PATH"
+           echo '##[add-path]D:\a\DemoProject\DemoProject\demo\dcover'
       - name: check working dir
         run: pwd
       - name: change dir to dCover
