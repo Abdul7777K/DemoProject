@@ -53,12 +53,11 @@ jobs:
       - name: Add Diffblue Cover directory to GITHUB_PATH
         run: |
            echo 'D:\a\DemoProject\DemoProject\demo\dcover' >> $GITHUB_PATH
-      - name: Set env variable
-        run: |
-          $newDir = 'D:\a\DemoProject\DemoProject\demo\dcover'
-          $userPath = [Environment]::GetEnvironmentVariable('Path', 'User')
-          [Environment]::SetEnvironmentVariable('Path', ($userPath + ';' + $newDir), 'User')
-          $env:Path += ';' + $newDir
+           
+      - name: Add a Directory to PATH
+        uses: actions/setup-python@v2
+        with:
+          add-path: D:\a\DemoProject\DemoProject\demo\dcover
            
       - name: Activate -
         run: |
