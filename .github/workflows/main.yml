@@ -41,4 +41,9 @@ jobs:
         run: |
           unzip diffblue-cover-cli.zip -d demo/dcover
           ls demo/dcover
+      - name: Add Diffblue Cover directory to GITHUB_PATH
+        run: |
+          echo "D:\a\DemoProject\DemoProject\demo\dcover" >> "$GITHUB_PATH"
+      - name: check working dir
+        run: pwd
       
