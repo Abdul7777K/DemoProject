@@ -24,7 +24,7 @@ jobs:
       - name: Initialize Gradle build
         run: gradle init
       - name: Compile project
-        run: gradle build
+        run: gradle build --scan
       # Get, unzip, and activate Diffblue Cover
       - name: Download Diffblue Cover
         run: |
