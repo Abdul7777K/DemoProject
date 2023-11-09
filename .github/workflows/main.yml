@@ -49,7 +49,8 @@ jobs:
       - name: Remove Diffblue Cover CLI zip file
         run: |
           Remove-Item -Path "diffblue-cover-cli.zip" -Force
-
+      - name: list
+        run: ls
       - name: Add Diffblue Cover directory to GITHUB_PATH
         run: |
           echo "$RUNNER_TEMP/dcover" >> "$GITHUB_PATH"
