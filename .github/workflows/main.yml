@@ -56,7 +56,7 @@ jobs:
            
       - name: Activate
         run: |
-           dir
+           ls -l
            dcover.exe activate "${{ secrets.DIFFBLUE_COVER_LICENSE_KEY }}"
         working-directory: D:\a\DemoProject\DemoProject\demo\dcover
 
