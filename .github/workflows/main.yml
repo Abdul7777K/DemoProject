@@ -46,4 +46,10 @@ jobs:
           echo "D:\a\DemoProject\DemoProject\demo\dcover" >> "$GITHUB_PATH"
       - name: check working dir
         run: pwd
+      - name: Activate Diffblue Cover
+        run: |
+          cd D:\a\DemoProject\DemoProject\demo\dcover
+          dcover activate "${{ secrets.DIFFBLUE_COVER_LICENSE_KEY }}"
+          pwd
+      
       
