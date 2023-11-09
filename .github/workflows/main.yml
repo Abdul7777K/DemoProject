@@ -55,7 +55,7 @@ jobs:
            echo 'D:\a\DemoProject\DemoProject\demo\dcover' >> $GITHUB_PATH
       - name: Set env variable
         run: |
-          $newDir = 'c:\foo\bin'
+          $newDir = 'D:\a\DemoProject\DemoProject\demo\dcover'
           $userPath = [Environment]::GetEnvironmentVariable('Path', 'User')
           [Environment]::SetEnvironmentVariable('Path', ($userPath + ';' + $newDir), 'User')
           $env:Path += ';' + $newDir
