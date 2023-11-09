@@ -59,12 +59,10 @@ jobs:
           $env:PATH = "D:\a\DemoProject\DemoProject\demo\dcover;$env:PATH"
 
       - name: check working dir
-        run: pwd
+        run: dir D:\a\DemoProject\DemoProject\demo\dcover
 
-      - name: change dir to dCover
-        run: |
-          cd D:\a\DemoProject\DemoProject\demo\dcover
-          pwd
+      - name: Verify PATH
+        run: echo $env:PATH
 
       - name: Activate Diffblue Cover
         run: |
