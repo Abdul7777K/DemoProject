@@ -7,7 +7,7 @@ jobs:
   your_job_name:
     runs-on: windows-latest
     env:
-      PATH: C:\Abdul;%PATH%
+      PATH: C:\Abdul
       JVM_ARGS: -Xmx4096m
     steps:
     - name: Check Path
@@ -17,7 +17,7 @@ jobs:
         echo 'C:\Program Files\Git\bin' >> $GITHUB_PATH
 
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
       with:
         repository: Abdul7777K/DemoProject
         ref: main
