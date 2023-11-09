@@ -57,7 +57,8 @@ jobs:
 
       - name: Activate Diffblue Cover
         run: |
-          dcover activate "${{ secrets.DIFFBLUE_COVER_LICENSE_KEY }}"
+         cd $RUNNER_TEMP/dcover
+         dcover activate "${{ secrets.DIFFBLUE_COVER_LICENSE_KEY }}"
 
       # Generate tests with Diffblue Cover
       - name: Generate tests
