@@ -43,13 +43,14 @@ jobs:
           ls demo/dcover
       - name: Add Diffblue Cover directory to GITHUB_PATH
         run: |
-          echo "D:\a\DemoProject\DemoProject\demo\dcover" >> "$GITHUB_PATH"
+          echo 'export PATH="$PATH:/path/to/demo/dcover"' >> "$GITHUB_PATH"
       - name: check working dir
         run: pwd
       - name: Activate Diffblue Cover
         run: |
           cd D:\a\DemoProject\DemoProject\demo\dcover
-          dcover activate "${{ secrets.DIFFBLUE_COVER_LICENSE_KEY }}"
           pwd
+          dcover activate "${{ secrets.DIFFBLUE_COVER_LICENSE_KEY }}"
+          
       
       
