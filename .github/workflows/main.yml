@@ -11,6 +11,7 @@ jobs:
 
     env:
       PATH: C:\Abdul
+      JVM_ARGS: -Xmx4096m
     steps:
     - name: Check Path
       run: echo $env:PATH
