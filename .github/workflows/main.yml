@@ -39,6 +39,6 @@ jobs:
           pwd
       - name: Unzip Diffblue Cover CLI zip file
         run: |
-          unzip diffblue-cover-cli.zip d demo/dcover
+          unzip diffblue-cover-cli.zip -d demo/dcover
           ls demo/dcover
       
