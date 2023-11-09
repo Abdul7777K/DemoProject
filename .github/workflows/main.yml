@@ -38,29 +38,5 @@ jobs:
       - name: Print the list of dir
         run: |
           ls
-      - name: change dir
-        run: |
-          cd D:\a\DemoProject
-
-      - name: Unzip Diffblue Cover CLI zip file
-        run: |
-          unzip diffblue-cover-cli.zip
-
-      - name: Remove Diffblue Cover CLI zip file
-        run: |
-          Remove-Item -Path "diffblue-cover-cli.zip" -Force
-      - name: list
-        run: ls demo/dcover/
-      - name: Add Diffblue Cover directory to GITHUB_PATH
-        run: |
-          echo 'export PATH=$PATH:/path/to/demo/dcover' >> $GITHUB_PATH
-
-      - name: Activate Diffblue Cover
-        run: |
-         cd demo/dcover/
-         dcover activate "${{ secrets.DIFFBLUE_COVER_LICENSE_KEY }}"
-
-      # Generate tests with Diffblue Cover
-      - name: Generate tests
-        run: |
-          dcover create org.example.Addition --batch --working-directory --output test-cases.java
+          pwd
+      
