@@ -54,15 +54,17 @@ jobs:
         run: |
            echo 'D:\a\DemoProject\DemoProject\demo\dcover' >> $GITHUB_PATH
 
-      - name: Add Diffblue Cover directory to PATH
+      - name: Set custom PATH
         run: |
-            setx PATH "D:\a\DemoProject\DemoProject\demo\dcover\" /M
-      - name: check working dir
-        run: dir D:\a\DemoProject\DemoProject\demo\dcover
-
+          echo "##[add-path]D:\a\DemoProject\DemoProject\demo\dcover\"
+        shell: powershell
+  
       - name: Verify PATH
         run: echo $env:PATH
-
+        shell: powershell
+      - name: check working dir
+        run: dir D:\a\DemoProject\DemoProject\demo\dcover
+        
       - name: Activate Diffblue Cover
         run: |
           pwd
