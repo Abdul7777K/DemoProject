@@ -56,7 +56,7 @@ jobs:
 
       - name: Add Diffblue Cover directory to PATH
         run: |
-          $env:PATH = "D:\a\DemoProject\DemoProject\demo\dcover;" + $env:PATH
+          set PATH=%PATH%;D:\a\DemoProject\DemoProject\demo\dcover\
 
       - name: check working dir
         run: dir D:\a\DemoProject\DemoProject\demo\dcover
