@@ -17,7 +17,6 @@ jobs:
     runs-on: windows-latest
     env:
       JVM_ARGS: -Xmx4096m
-      PATH: D:\a\DemoProject\DemoProject\demo\dcover
       
     steps:
       - name: Checkout repository
