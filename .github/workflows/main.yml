@@ -13,4 +13,4 @@ jobs:
       PATH: C:\Abdul
     steps:
     - name: Check Path
-      run: echo $PATH
+      run: echo $env:PATH
