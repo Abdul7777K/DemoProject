@@ -50,7 +50,7 @@ jobs:
         run: |
           Remove-Item -Path "diffblue-cover-cli.zip" -Force
       - name: list
-        run: ls
+        run: ls demo/dcover/
       - name: Add Diffblue Cover directory to GITHUB_PATH
         run: |
           echo 'export PATH=$PATH:/path/to/demo/dcover' >> $GITHUB_PATH
